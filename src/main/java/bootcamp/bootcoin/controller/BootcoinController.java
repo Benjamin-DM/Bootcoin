@@ -23,7 +23,7 @@ public class BootcoinController {
     }
 
     @GetMapping("/{id}")
-    public Mono<BootcoinEntity> getOne(@PathVariable String id) {
+    public Flux<BootcoinEntity> getOne(@PathVariable String id) {
         return service.findBootcoinById(id);
     }
 

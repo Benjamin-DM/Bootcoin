@@ -8,10 +8,11 @@ public interface iBootcoinService {
 
     Flux<BootcoinEntity> findAll();
 
-    Mono<BootcoinEntity> findBootcoinById(String id);
+    Flux<BootcoinEntity> findBootcoinById(String id);
 
     Mono<BootcoinEntity> save(BootcoinEntity bootcoin);
 
     Mono<BootcoinEntity> update(BootcoinEntity bootcoin);
+
     Mono <Void> delete(String id);
 }

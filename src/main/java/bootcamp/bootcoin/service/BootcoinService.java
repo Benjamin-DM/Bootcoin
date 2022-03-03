@@ -1,6 +1,7 @@
 package bootcamp.bootcoin.service;
 
 import bootcamp.bootcoin.model.BootcoinEntity;
+import bootcamp.bootcoin.repository.BootcoinRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -10,31 +11,32 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class BootcoinService  implements iBootcoinService{
 
+    private final BootcoinRepository repository;
 
     @Override
     public Flux<BootcoinEntity> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
-    public Mono<BootcoinEntity> findBootcoinById(String id) {
-        return null;
+    public Flux<BootcoinEntity> findBootcoinById(String id) {
+        return repository.findBootcoinById(id);
     }
 
 
     @Override
     public Mono<BootcoinEntity> save(BootcoinEntity bootcoin) {
-        return null;
+        return repository.save(bootcoin);
     }
 
     @Override
     public Mono<BootcoinEntity> update(BootcoinEntity bootcoin) {
-        return null;
+        return repository.save(bootcoin);
     }
 
     @Override
     public Mono<Void> delete(String id) {
-        return null;
+        return repository.deleteById(id);
     }
 
 
